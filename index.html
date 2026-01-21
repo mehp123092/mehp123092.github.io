@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brynn Sloane | Software Engineering Portfolio</title>
-  <meta name="description" content="Brynn Sloane — Software Engineering student with a Diploma of Information Technology. Portfolio showcasing Python, creative technology, video editing, and 3D modelling." />
+  <title>Brynn Sloane | Software Engineering & Creative-Tech Portfolio</title>
+  <meta name="description" content="Brynn Sloane — Software Engineering student with a Diploma of Information Technology. Portfolio featuring Python, creative technology, video editing, and 3D modelling." />
 
   <style>
     :root{
@@ -20,7 +20,7 @@
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
       --radius: 18px;
       --radius2: 24px;
-      --max: 1050px;
+      --max: 1100px;
     }
 
     *{ box-sizing: border-box; }
@@ -29,9 +29,9 @@
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
-        radial-gradient(900px 500px at 12% 10%, rgba(56,189,248,0.14), transparent 60%),
-        radial-gradient(800px 500px at 85% 15%, rgba(167,139,250,0.14), transparent 55%),
-        radial-gradient(900px 600px at 50% 90%, rgba(56,189,248,0.08), transparent 60%),
+        radial-gradient(900px 500px at 12% 10%, rgba(56,189,248,0.15), transparent 60%),
+        radial-gradient(800px 500px at 85% 15%, rgba(167,139,250,0.15), transparent 55%),
+        radial-gradient(900px 600px at 50% 90%, rgba(56,189,248,0.09), transparent 60%),
         var(--bg);
       color: var(--text);
       line-height: 1.55;
@@ -43,7 +43,7 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 18px 80px;
+      padding: 26px 18px 84px;
     }
 
     /* Top nav */
@@ -62,7 +62,7 @@
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight: 700;
+      font-weight: 750;
       letter-spacing: 0.2px;
     }
     .dot{
@@ -81,17 +81,7 @@
     .navlinks a{ color: var(--muted); padding: 8px 10px; border-radius: 12px; }
     .navlinks a:hover{ background: rgba(255,255,255,0.06); text-decoration: none; color: var(--text); }
 
-    /* Hero */
-    .hero{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 18px;
-    }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-    }
-
+    /* Cards */
     .card{
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.05);
@@ -99,6 +89,18 @@
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
     }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+    }
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
     .heroMain{
       padding: 28px 26px;
       position: relative;
@@ -108,22 +110,29 @@
       content:"";
       position:absolute; inset:-2px;
       background:
-        radial-gradient(600px 300px at 20% 10%, rgba(56,189,248,0.18), transparent 60%),
-        radial-gradient(600px 300px at 80% 20%, rgba(167,139,250,0.14), transparent 55%);
+        radial-gradient(600px 300px at 20% 10%, rgba(56,189,248,0.20), transparent 60%),
+        radial-gradient(600px 300px at 80% 20%, rgba(167,139,250,0.16), transparent 55%);
       pointer-events:none;
     }
     .heroMain > *{ position:relative; z-index:1; }
 
     h1{
       margin: 0 0 10px;
-      font-size: clamp(2.0rem, 3.4vw, 3.0rem);
-      letter-spacing: -0.5px;
+      font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+      letter-spacing: -0.6px;
     }
     .subtitle{
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.06rem;
     }
+    .lead{
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 62ch;
+    }
+
     .badges{
       display:flex;
       flex-wrap: wrap;
@@ -157,7 +166,7 @@
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.06);
       color: var(--text);
-      font-weight: 600;
+      font-weight: 650;
       text-decoration: none;
     }
     .btn:hover{ background: rgba(255,255,255,0.10); text-decoration:none; }
@@ -175,7 +184,6 @@
       flex-direction: column;
       gap: 12px;
     }
-
     .mini{
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -193,13 +201,13 @@
       padding-left: 18px;
       color: var(--muted);
     }
+    .mini li{ margin: 6px 0; }
 
     /* Sections */
     .section{
       margin-top: 18px;
       padding: 22px 22px;
     }
-
     .sectionHead{
       display:flex;
       justify-content: space-between;
@@ -222,7 +230,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
-    @media (max-width: 900px){
+    @media (max-width: 920px){
       .grid2{ grid-template-columns: 1fr; }
     }
 
@@ -241,6 +249,7 @@
       color: var(--muted);
       font-size: 0.96rem;
     }
+
     .tagRow{
       margin-top: 12px;
       display:flex;
@@ -256,7 +265,55 @@
       color: var(--muted);
     }
 
-    /* Timeline */
+    /* Projects */
+    .projects{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 920px){
+      .projects{ grid-template-columns: 1fr; }
+    }
+    .project{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.14);
+      padding: 16px;
+    }
+    .projectTop{
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .project h3{
+      margin: 0;
+      font-size: 1.05rem;
+    }
+    .status{
+      color: var(--muted);
+      font-size: 0.92rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.05);
+      white-space: nowrap;
+    }
+    .project p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .project ul{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .project li{ margin: 6px 0; }
+
+    /* Experience timeline */
     .timeline{
       display:flex;
       flex-direction: column;
@@ -304,7 +361,6 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
-    .muted { color: var(--muted); }
     .hr{
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--line), transparent);
@@ -325,6 +381,7 @@
 <body>
   <div class="wrap">
 
+    <!-- NAV -->
     <div class="nav card">
       <div class="brand">
         <span class="dot"></span>
@@ -333,155 +390,322 @@
       <div class="navlinks">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#creative">Creative</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
 
+    <!-- HERO -->
     <div class="hero">
-      <div class="heroMain card">
+      <div class="heroMain card" id="about">
         <h1>Brynn Sloane</h1>
         <p class="subtitle">
-          Bachelor of Software Engineering (in progress) · Diploma of Information Technology (completed)
+          Software Engineering (Bachelor, in progress) · Diploma of Information Technology (completed)
         </p>
 
         <div class="badges">
           <div class="badge">Python <span>(fundamentals)</span></div>
           <div class="badge">Blender <span>(3D modelling)</span></div>
-          <div class="badge">DaVinci Resolve <span>(editing)</span></div>
+          <div class="badge">DaVinci Resolve <span>(editing + colour)</span></div>
           <div class="badge">Photoshop <span>(design)</span></div>
+          <div class="badge">CapCut <span>(short-form)</span></div>
         </div>
 
-        <p class="muted" id="about">
-          I’m a Software Engineering student with a completed Diploma of Information Technology, focused on building practical
-          technical skills across software fundamentals and creative technology. I enjoy projects that sit at the intersection of
-          problem-solving and production workflows — from scripting small automations to creating clean visual assets.
+        <p class="lead">
+          I’m a Software Engineering student with a completed Diploma of IT, building practical skills across software fundamentals and
+          creative technology. I enjoy work that blends problem-solving with production quality — writing small scripts and tools, refining
+          workflows, and creating clean, consistent digital outputs (video, visual assets, and 3D content).
+        </p>
+
+        <p class="lead">
+          I’m developing a portfolio focused on <strong>software + creative-tech</strong>: Python utilities that solve real problems,
+          plus production projects that demonstrate a professional pipeline (planning → execution → polish).
         </p>
 
         <div class="ctaRow">
           <a class="btn btnPrimary" href="https://github.com/mehp123092" target="_blank" rel="noopener">GitHub</a>
-          <!-- OPTIONAL: Add your LinkedIn once ready -->
-          <!-- <a class="btn" href="https://www.linkedin.com/in/YOUR-LINK" target="_blank" rel="noopener">LinkedIn</a> -->
-          <!-- OPTIONAL: Add a CV PDF later -->
-          <!-- <a class="btn" href="assets/BrynnSloane_CV.pdf" target="_blank" rel="noopener">Download CV</a> -->
-          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:harrison.sloane2013@gmail.com">Email</a>
         </div>
 
         <hr class="hr" />
 
-        <p class="muted">
-          <strong>Currently open to:</strong> graduate/junior roles in software, IT support, technical operations, digital production,
-          or creative-tech support roles.
+        <p class="lead">
+          <strong>Target roles:</strong> junior software / IT roles, technical support/operations, digital production, creative-tech support,
+          or any role that values reliable execution, attention to detail, and strong communication.
         </p>
       </div>
 
       <div class="heroSide card">
         <div class="mini">
-          <h3>Quick snapshot</h3>
-          <p>Canberra, ACT · Available for professional roles and internships.</p>
+          <h3>Quick strengths</h3>
+          <p>What you can expect from me in a professional team.</p>
           <ul>
-            <li>Strong communication + teamwork (high-pressure environments)</li>
-            <li>Detail-focused approach to quality and consistency</li>
-            <li>Comfortable learning new tools fast</li>
+            <li>Fast learner: comfortable picking up new tools and workflows quickly</li>
+            <li>Detail-focused: consistent quality control and clean deliverables</li>
+            <li>Calm under pressure: high-volume environments trained my prioritisation</li>
+            <li>Clear communicator: strong customer-facing and team collaboration skills</li>
           </ul>
         </div>
 
         <div class="mini">
-          <h3>What I’m building next</h3>
-          <p class="muted">
-            A small set of portfolio projects to demonstrate real-world problem solving and clean documentation.
+          <h3>What I’m working on</h3>
+          <p>
+            Building a small set of polished projects that show both technical ability and creative execution.
           </p>
           <ul>
-            <li><span class="muted">[Placeholder]</span> Python media/file organiser</li>
-            <li><span class="muted">[Placeholder]</span> Simple CLI utility / automation</li>
-            <li><span class="muted">[Placeholder]</span> Creative-tech workflow demo</li>
+            <li>Python tools that solve real workflow problems</li>
+            <li>Video editing projects with a repeatable professional pipeline</li>
+            <li>3D modelling practice focused on clean topology and presentation renders</li>
           </ul>
         </div>
       </div>
     </div>
 
+    <!-- SKILLS -->
     <div class="section card" id="skills">
       <div class="sectionHead">
         <h2>Technical skills</h2>
-        <div class="hint">A practical toolkit across software + production workflows</div>
+        <div class="hint">Software fundamentals + production-ready workflows</div>
       </div>
 
       <div class="grid2">
         <div class="tile">
           <h3>Software & IT</h3>
           <p>
-            Python fundamentals, basic scripting and problem-solving, plus general IT literacy and troubleshooting.
+            Comfortable with foundational programming and structured problem-solving. I’m building out a portfolio of Python utilities
+            and documented projects that demonstrate clean thinking and practical outcomes.
           </p>
           <div class="tagRow">
-            <span class="tag">Python</span>
-            <span class="tag">Git/GitHub</span>
-            <span class="tag">HTML/CSS (this site)</span>
+            <span class="tag">Python (fundamentals)</span>
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">HTML/CSS</span>
             <span class="tag">Documentation</span>
+            <span class="tag">Workflow automation</span>
           </div>
         </div>
 
         <div class="tile">
           <h3>Creative technology</h3>
           <p>
-            Confident producing digital assets and working in media pipelines: editing, visuals, and 3D modelling.
+            Strong interest and growing proficiency in media pipelines: editing, colour, asset creation, and 3D modelling. I focus on
+            consistent outputs, clean file organisation, and repeatable workflows.
           </p>
           <div class="tagRow">
             <span class="tag">DaVinci Resolve</span>
             <span class="tag">CapCut</span>
             <span class="tag">Photoshop</span>
             <span class="tag">Blender</span>
+            <span class="tag">Export presets</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section card" id="projects">
+    <!-- CREATIVE DETAIL -->
+    <div class="section card" id="creative">
       <div class="sectionHead">
-        <h2>Featured projects</h2>
-        <div class="hint">Add 1–3 projects here first — quality > quantity</div>
+        <h2>Creative work focus</h2>
+        <div class="hint">Quality, consistency, and a professional process</div>
       </div>
 
       <div class="grid2">
         <div class="tile">
-          <h3>Python media/file organiser <span class="muted">(planned)</span></h3>
+          <h3>Video editing (DaVinci Resolve / CapCut)</h3>
           <p>
-            A Python script that sorts files into folders by type (e.g. video, images, audio), with safe “dry run” mode and clear logs.
-            <br><br>
-            <span class="muted">Add link when created:</span> <code class="inline">github.com/mehp123092/REPO-NAME</code>
+            I’m proficient in building clean edits from raw footage through to export-ready deliverables. I focus on pacing, structure,
+            and polish — including colour correction/grading, clean cuts, audio balancing, and consistent exports for different platforms.
           </p>
           <div class="tagRow">
-            <span class="tag">Python</span>
-            <span class="tag">Automation</span>
-            <span class="tag">CLI</span>
+            <span class="tag">Cutting & pacing</span>
+            <span class="tag">Colour correction</span>
+            <span class="tag">Basic grading</span>
+            <span class="tag">Audio cleanup</span>
+            <span class="tag">Export settings</span>
           </div>
         </div>
 
         <div class="tile">
-          <h3>Creative-tech workflow demo <span class="muted">(planned)</span></h3>
+          <h3>3D modelling (Blender)</h3>
           <p>
-            A small showcase of a repeatable workflow: organise assets → edit/grade → export presets → version files cleanly.
-            Great for showing “professional process” and attention to detail.
-            <br><br>
-            <span class="muted">Add examples:</span> before/after stills, short reel, or render screenshots.
+            I use Blender for modelling and presentation. My focus is on learning good modelling habits: clean topology, controlled
+            bevels, sensible use of modifiers, and simple lighting setups to present work clearly.
           </p>
           <div class="tagRow">
-            <span class="tag">DaVinci</span>
-            <span class="tag">Blender</span>
-            <span class="tag">Photoshop</span>
+            <span class="tag">Modelling fundamentals</span>
+            <span class="tag">Modifiers</span>
+            <span class="tag">UV basics</span>
+            <span class="tag">Simple materials</span>
+            <span class="tag">Presentation renders</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <h3>Design & assets (Photoshop)</h3>
+          <p>
+            Comfortable creating and refining visual assets: thumbnails, overlays, basic branding elements, and clean compositions.
+            I value clarity, alignment, and consistency in style.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Compositing</span>
+            <span class="tag">Typography basics</span>
+            <span class="tag">Layered workflows</span>
+            <span class="tag">Export formats</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <h3>How I work</h3>
+          <p>
+            I treat creative projects like engineering work: clear goals, repeatable steps, clean file structure, and consistent output.
+            That same mindset applies to software projects — build, test, document, improve.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Planning</span>
+            <span class="tag">File organisation</span>
+            <span class="tag">Quality control</span>
+            <span class="tag">Iteration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section card" id="projects">
+      <div class="sectionHead">
+        <h2>Projects roadmap</h2>
+        <div class="hint">These are designed to be achievable and portfolio-worthy</div>
+      </div>
+
+      <div class="projects">
+        <div class="project">
+          <div class="projectTop">
+            <h3>1) Media Organizer CLI (Python)</h3>
+            <div class="status">Start here</div>
+          </div>
+          <p>
+            A command-line tool that organises files into folders by type (video/images/audio/docs), with safe “dry run” mode and logs.
+            This shows real-world automation and clean engineering habits.
+          </p>
+          <ul>
+            <li>Features: dry-run, undo option, logging, configurable rules</li>
+            <li>Skills: Python, file I/O, CLI args, clean README</li>
+            <li>Stretch: simple GUI version later (optional)</li>
+          </ul>
+          <div class="tagRow">
+            <span class="tag">Python</span><span class="tag">Automation</span><span class="tag">CLI</span><span class="tag">Logging</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="projectTop">
+            <h3>2) Portfolio Project Tracker (Web)</h3>
+            <div class="status">Good second project</div>
+          </div>
+          <p>
+            A small, clean web page that lists your projects with status, screenshots, and links. Start as static HTML, then add a tiny bit
+            of JavaScript to load projects from a JSON file.
+          </p>
+          <ul>
+            <li>Features: filter by category, status badges, “recent updates”</li>
+            <li>Skills: HTML/CSS, basic JS, clean layout</li>
+            <li>Stretch: deploy as a separate page on this site</li>
+          </ul>
+          <div class="tagRow">
+            <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Design</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="projectTop">
+            <h3>3) Resolve Export Preset Guide + Workflow</h3>
+            <div class="status">Creative-tech</div>
+          </div>
+          <p>
+            A documented editing workflow: import → organise → edit → colour → audio → export. Create a short demo clip and document your
+            export settings for YouTube/Instagram/TikTok. This demonstrates professional process and consistency.
+          </p>
+          <ul>
+            <li>Create: a 20–45s highlight reel with clean pacing and audio</li>
+            <li>Document: folder structure + export settings + checklist</li>
+            <li>Deliverable: a PDF/README + sample exports</li>
+          </ul>
+          <div class="tagRow">
+            <span class="tag">DaVinci Resolve</span><span class="tag">Editing</span><span class="tag">Documentation</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="projectTop">
+            <h3>4) Blender “Product Render” Study Pack</h3>
+            <div class="status">Creative-tech</div>
+          </div>
+          <p>
+            Build a small series of 3D models (simple but clean): 3–5 objects with consistent lighting and renders. Focus on clean modelling
+            fundamentals and presentation quality.
+          </p>
+          <ul>
+            <li>Targets: clean topology, modifiers, materials, simple lighting</li>
+            <li>Deliverable: renders + a short breakdown of your process</li>
+            <li>Stretch: turntable animation render</li>
+          </ul>
+          <div class="tagRow">
+            <span class="tag">Blender</span><span class="tag">Modelling</span><span class="tag">Rendering</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="projectTop">
+            <h3>5) Python Log Parser / Report Generator</h3>
+            <div class="status">Nice technical proof</div>
+          </div>
+          <p>
+            A Python tool that reads a log file (or CSV), extracts useful info, and outputs a clean report (summary + top errors + timestamps).
+            This shows basic analysis skills and professional output formatting.
+          </p>
+          <ul>
+            <li>Input: sample logs you create</li>
+            <li>Output: a clean text/CSV report + optional charts</li>
+            <li>Stretch: export to PDF or HTML</li>
+          </ul>
+          <div class="tagRow">
+            <span class="tag">Python</span><span class="tag">Parsing</span><span class="tag">Reporting</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="projectTop">
+            <h3>6) Content Asset Generator (Photoshop + Automation)</h3>
+            <div class="status">Creative + process</div>
+          </div>
+          <p>
+            Create a repeatable system for thumbnails/overlays: consistent fonts, spacing, and export sizes. Document your template rules.
+            Pair it with a small Python script that renames and sorts exports into organised folders.
+          </p>
+          <ul>
+            <li>Deliverables: template examples + style rules</li>
+            <li>Automation: rename/sort exports with Python</li>
+            <li>Outcome: shows professional workflow thinking</li>
+          </ul>
+          <div class="tagRow">
+            <span class="tag">Photoshop</span><span class="tag">Workflow</span><span class="tag">Python</span>
           </div>
         </div>
       </div>
 
-      <p class="muted" style="margin:14px 0 0;">
-        Tip: even one finished repo with a clean README makes this section look very strong.
+      <p style="margin:14px 0 0; color: var(--muted);">
+        I’m building these projects with a focus on clean documentation, repeatable workflow, and professional presentation. Each one will be
+        added to GitHub with clear instructions, screenshots, and outcomes.
       </p>
     </div>
 
+    <!-- EXPERIENCE -->
     <div class="section card" id="experience">
       <div class="sectionHead">
         <h2>Experience</h2>
-        <div class="hint">Work history that proves reliability under pressure</div>
+        <div class="hint">Transferable skills: pressure, prioritisation, communication</div>
       </div>
 
       <div class="timeline">
@@ -489,14 +713,14 @@
           <div class="roleTop">
             <div>
               <h3>Raku Dining — Bartender</h3>
-              <div class="meta">High-end service · precision · attention to detail</div>
+              <div class="meta">High-end service · precision · quality standards</div>
             </div>
-            <div class="date">2025-Present</div>
+            <div class="date">2025</div>
           </div>
           <ul>
-            <li>Delivered premium customer experiences with a strong focus on consistency and quality.</li>
-            <li>Managed multiple tasks under time pressure while maintaining presentation standards.</li>
-            <li><span class="muted">[Optional to add]</span> Add 1–2 specific responsibilities you’re comfortable sharing.</li>
+            <li>Maintained high presentation and service standards in a premium environment, with strong attention to detail.</li>
+            <li>Managed multiple tasks efficiently during peak periods while keeping output consistent and professional.</li>
+            <li>Built strong communication habits through customer interaction and team coordination.</li>
           </ul>
         </div>
 
@@ -509,9 +733,9 @@
             <div class="date">2024</div>
           </div>
           <ul>
-            <li>Worked in a fast-paced rooftop lounge environment and handled competing priorities during peak service.</li>
-            <li>Coordinated with team members to keep service smooth and maintain high standards.</li>
-            <li><span class="muted">[Optional]</span> Add a realistic metric you can defend (e.g. “busy Friday nights”, not exact numbers).</li>
+            <li>Operated effectively in a fast-paced rooftop lounge environment with heavy service demand.</li>
+            <li>Prioritised competing tasks and maintained composure under pressure.</li>
+            <li>Supported smooth operations through clear teamwork and consistent execution.</li>
           </ul>
         </div>
 
@@ -524,31 +748,39 @@
             <div class="date">2023–2024</div>
           </div>
           <ul>
-            <li>Performed varied front-of-house roles in a demanding environment, balancing speed with accuracy.</li>
-            <li>Strengthened communication and problem-solving through real-time customer interaction.</li>
-            <li>Demonstrated consistent reliability and adaptability across shifts and service demands.</li>
+            <li>Handled varied front-of-house responsibilities while maintaining speed and accuracy.</li>
+            <li>Strengthened time management and problem-solving through real-time service demands.</li>
+            <li>Developed strong reliability habits: punctuality, consistency, and team support.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="section card">
+    <!-- EDUCATION -->
+    <div class="section card" id="education">
       <div class="sectionHead">
         <h2>Education</h2>
+        <div class="hint">University of Canberra</div>
       </div>
 
       <div class="grid2">
         <div class="tile">
           <h3>University of Canberra</h3>
           <p>
-            <strong>Bachelor of Software Engineering</strong> <span class="muted">(in progress)</span><br>
-            <strong>Diploma of Information Technology</strong> <span class="muted">(completed, 2024)</span>
+            <strong>Bachelor of Software Engineering</strong> (in progress)<br>
+            <strong>Diploma of Information Technology</strong> (completed, 2024)
           </p>
+          <div class="tagRow">
+            <span class="tag">Software fundamentals</span>
+            <span class="tag">Problem-solving</span>
+            <span class="tag">Professional communication</span>
+          </div>
         </div>
 
         <div class="tile">
-          <h3>Certifications</h3>
-          <p class="muted" style="margin-bottom:10px;">
+          <h3>Extra qualifications</h3>
+          <p>
+            Additional certifications (First Aid, RSA, etc.) are available on request and included on my CV where relevant.
           </p>
           <div class="tagRow">
             <span class="tag">HLTAID011 First Aid</span>
@@ -559,25 +791,32 @@
       </div>
     </div>
 
+    <!-- CONTACT -->
     <div class="section card" id="contact">
       <div class="sectionHead">
         <h2>Contact</h2>
-        <div class="hint">Fastest way for recruiters to reach you</div>
+        <div class="hint">Best way to reach me</div>
       </div>
 
       <div class="grid2">
         <div class="tile">
           <h3>Email</h3>
-          <p class="muted">
-            <span class="muted">Harrison.sloane2013@gmail.com</span><br>
+          <p>
+            <a href="mailto:harrison.sloane2013@gmail.com">harrison.sloane2013@gmail.com</a>
+          </p>
+          <p style="margin-top:10px; color: var(--muted);">
+            I’m happy to share my CV, project updates, and examples of creative work on request.
           </p>
         </div>
 
         <div class="tile">
           <h3>Links</h3>
-          <p class="muted">
+          <p style="color: var(--muted);">
             GitHub: <a href="https://github.com/mehp123092" target="_blank" rel="noopener">github.com/mehp123092</a><br>
-            <span class="muted">[Optional]</span> LinkedIn: <code class="inline">linkedin.com/in/YOUR-LINK</code>
+            Website: <a href="https://mehp123092.github.io" target="_blank" rel="noopener">mehp123092.github.io</a>
+          </p>
+          <p style="margin-top:10px; color: var(--muted);">
+            As projects are completed, each will be documented with screenshots, outcomes, and a clean README.
           </p>
         </div>
       </div>
@@ -587,8 +826,8 @@
       <div>
         © <span id="year"></span> Brynn Sloane · Built with GitHub Pages
       </div>
-      <div class="muted">
-        Last updated: <span class="muted">edit <code class="inline">index.html</code> to update</span>
+      <div>
+        <span style="color: var(--muted);">Last updated:</span> <span id="lastUpdated" style="color: var(--muted);"></span>
       </div>
     </div>
 
@@ -596,6 +835,8 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    const d = new Date();
+    document.getElementById("lastUpdated").textContent = d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
   </script>
 </body>
 </html>
