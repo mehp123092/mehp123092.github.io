@@ -1,48 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brynn Sloane | Software Engineering Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brynn Sloane — Software Engineering student with a Diploma of Information Technology. Portfolio showcasing Python, creative technology, video editing, and 3D modelling." />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px;
-      background: #0f172a;
-      color: #e5e7eb;
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.08);
+      --text: #e7eefc;
+      --muted: rgba(231,238,252,0.72);
+      --soft: rgba(231,238,252,0.12);
+      --line: rgba(231,238,252,0.14);
+      --accent: #38bdf8;
+      --accent2: #a78bfa;
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1050px;
     }
-    h1 { font-size: 2.5rem; }
-    h2 { margin-top: 40px; }
-    a { color: #38bdf8; text-decoration: none; }
-    .container { max-width: 900px; margin: auto; }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 12% 10%, rgba(56,189,248,0.14), transparent 60%),
+        radial-gradient(800px 500px at 85% 15%, rgba(167,139,250,0.14), transparent 55%),
+        radial-gradient(900px 600px at 50% 90%, rgba(56,189,248,0.08), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    /* Top nav */
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.18);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius2);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(56,189,248,0.08);
+    }
+    .navlinks{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .navlinks a{ color: var(--muted); padding: 8px 10px; border-radius: 12px; }
+    .navlinks a:hover{ background: rgba(255,255,255,0.06); text-decoration: none; color: var(--text); }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{
+      padding: 28px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .heroMain:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 300px at 20% 10%, rgba(56,189,248,0.18), transparent 60%),
+        radial-gradient(600px 300px at 80% 20%, rgba(167,139,250,0.14), transparent 55%);
+      pointer-events:none;
+    }
+    .heroMain > *{ position:relative; z-index:1; }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(2.0rem, 3.4vw, 3.0rem);
+      letter-spacing: -0.5px;
+    }
+    .subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .badges{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+    .badge{
+      font-size: 0.92rem;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.16);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .badge span{ color: var(--muted); }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn:hover{ background: rgba(255,255,255,0.10); text-decoration:none; }
+    .btnPrimary{
+      border: 1px solid rgba(56,189,248,0.35);
+      background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(167,139,250,0.16));
+    }
+    .btnPrimary:hover{
+      background: linear-gradient(135deg, rgba(56,189,248,0.28), rgba(167,139,250,0.22));
+    }
+
+    .heroSide{
+      padding: 18px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mini{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.14);
+      padding: 14px 14px;
+    }
+    .mini h3{
+      margin: 0 0 8px;
+      font-size: 1.0rem;
+      letter-spacing: -0.2px;
+    }
+    .mini p{ margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .mini ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    .section{
+      margin-top: 18px;
+      padding: 22px 22px;
+    }
+
+    .sectionHead{
+      display:flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .sectionHead h2{
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.2px;
+    }
+    .sectionHead .hint{
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .tile{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.14);
+      padding: 16px;
+    }
+    .tile h3{
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+    .tile p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .tagRow{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag{
+      font-size: 0.86rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--muted);
+    }
+
+    /* Timeline */
+    .timeline{
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .role{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.14);
+      padding: 16px;
+    }
+    .roleTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .role h3{ margin: 0; font-size: 1.05rem; }
+    .meta{ color: var(--muted); font-size: 0.93rem; margin-top: 3px; }
+    .date{
+      color: var(--muted);
+      font-size: 0.93rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.05);
+      white-space: nowrap;
+    }
+    .role ul{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .role li{ margin: 6px 0; }
+
+    /* Footer */
+    .footer{
+      margin-top: 18px;
+      padding: 18px 22px;
+      display:flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .muted { color: var(--muted); }
+    .hr{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+      margin: 16px 0;
+      border: 0;
+    }
+    code.inline{
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: rgba(231,238,252,0.9);
+      font-size: 0.92em;
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Brynn Sloane</h1>
-    <p>
-      Bachelor of Software Engineering (in progress) · Diploma of Information Technology
-    </p>
+  <div class="wrap">
 
-    <h2>About</h2>
-    <p>
-      Software Engineering student with a Diploma of IT, focused on creative
-      technology, software fundamentals, and digital media workflows.
-    </p>
+    <div class="nav card">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Brynn Sloane</span>
+      </div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
 
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>Python (fundamentals)</li>
-      <li>DaVinci Resolve, CapCut</li>
-      <li>Photoshop</li>
-      <li>Blender (3D modelling)</li>
-    </ul>
+    <div class="hero">
+      <div class="heroMain card">
+        <h1>Brynn Sloane</h1>
+        <p class="subtitle">
+          Bachelor of Software Engineering (in progress) · Diploma of Information Technology (completed)
+        </p>
 
-    <h2>Links</h2>
-    <p>
-      <a href="https://github.com/mehp123092">GitHub</a>
-    </p>
+        <div class="badges">
+          <div class="badge">Python <span>(fundamentals)</span></div>
+          <div class="badge">Blender <span>(3D modelling)</span></div>
+          <div class="badge">DaVinci Resolve <span>(editing)</span></div>
+          <div class="badge">Photoshop <span>(design)</span></div>
+        </div>
+
+        <p class="muted" id="about">
+          I’m a Software Engineering student with a completed Diploma of Information Technology, focused on building practical
+          technical skills across software fundamentals and creative technology. I enjoy projects that sit at the intersection of
+          problem-solving and production workflows — from scripting small automations to creating clean visual assets.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://github.com/mehp123092" target="_blank" rel="noopener">GitHub</a>
+          <!-- OPTIONAL: Add your LinkedIn once ready -->
+          <!-- <a class="btn" href="https://www.linkedin.com/in/YOUR-LINK" target="_blank" rel="noopener">LinkedIn</a> -->
+          <!-- OPTIONAL: Add a CV PDF later -->
+          <!-- <a class="btn" href="assets/BrynnSloane_CV.pdf" target="_blank" rel="noopener">Download CV</a> -->
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+
+        <hr class="hr" />
+
+        <p class="muted">
+          <strong>Currently open to:</strong> graduate/junior roles in software, IT support, technical operations, digital production,
+          or creative-tech support roles.
+        </p>
+      </div>
+
+      <div class="heroSide card">
+        <div class="mini">
+          <h3>Quick snapshot</h3>
+          <p>Canberra, ACT · Available for professional roles and internships.</p>
+          <ul>
+            <li>Strong communication + teamwork (high-pressure environments)</li>
+            <li>Detail-focused approach to quality and consistency</li>
+            <li>Comfortable learning new tools fast</li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>What I’m building next</h3>
+          <p class="muted">
+            A small set of portfolio projects to demonstrate real-world problem solving and clean documentation.
+          </p>
+          <ul>
+            <li><span class="muted">[Placeholder]</span> Python media/file organiser</li>
+            <li><span class="muted">[Placeholder]</span> Simple CLI utility / automation</li>
+            <li><span class="muted">[Placeholder]</span> Creative-tech workflow demo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card" id="skills">
+      <div class="sectionHead">
+        <h2>Technical skills</h2>
+        <div class="hint">A practical toolkit across software + production workflows</div>
+      </div>
+
+      <div class="grid2">
+        <div class="tile">
+          <h3>Software & IT</h3>
+          <p>
+            Python fundamentals, basic scripting and problem-solving, plus general IT literacy and troubleshooting.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Python</span>
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">HTML/CSS (this site)</span>
+            <span class="tag">Documentation</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <h3>Creative technology</h3>
+          <p>
+            Confident producing digital assets and working in media pipelines: editing, visuals, and 3D modelling.
+          </p>
+          <div class="tagRow">
+            <span class="tag">DaVinci Resolve</span>
+            <span class="tag">CapCut</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">Blender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card" id="projects">
+      <div class="sectionHead">
+        <h2>Featured projects</h2>
+        <div class="hint">Add 1–3 projects here first — quality > quantity</div>
+      </div>
+
+      <div class="grid2">
+        <div class="tile">
+          <h3>Python media/file organiser <span class="muted">(planned)</span></h3>
+          <p>
+            A Python script that sorts files into folders by type (e.g. video, images, audio), with safe “dry run” mode and clear logs.
+            <br><br>
+            <span class="muted">Add link when created:</span> <code class="inline">github.com/mehp123092/REPO-NAME</code>
+          </p>
+          <div class="tagRow">
+            <span class="tag">Python</span>
+            <span class="tag">Automation</span>
+            <span class="tag">CLI</span>
+          </div>
+        </div>
+
+        <div class="tile">
+          <h3>Creative-tech workflow demo <span class="muted">(planned)</span></h3>
+          <p>
+            A small showcase of a repeatable workflow: organise assets → edit/grade → export presets → version files cleanly.
+            Great for showing “professional process” and attention to detail.
+            <br><br>
+            <span class="muted">Add examples:</span> before/after stills, short reel, or render screenshots.
+          </p>
+          <div class="tagRow">
+            <span class="tag">DaVinci</span>
+            <span class="tag">Blender</span>
+            <span class="tag">Photoshop</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin:14px 0 0;">
+        Tip: even one finished repo with a clean README makes this section look very strong.
+      </p>
+    </div>
+
+    <div class="section card" id="experience">
+      <div class="sectionHead">
+        <h2>Experience</h2>
+        <div class="hint">Work history that proves reliability under pressure</div>
+      </div>
+
+      <div class="timeline">
+        <div class="role">
+          <div class="roleTop">
+            <div>
+              <h3>Raku Dining — Bartender</h3>
+              <div class="meta">High-end service · precision · attention to detail</div>
+            </div>
+            <div class="date">2025</div>
+          </div>
+          <ul>
+            <li>Delivered premium customer experiences with a strong focus on consistency and quality.</li>
+            <li>Managed multiple tasks under time pressure while maintaining presentation standards.</li>
+            <li><span class="muted">[Optional to add]</span> Add 1–2 specific responsibilities you’re comfortable sharing.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <div>
+              <h3>Leyla Bar (Burbury Hotel) — Bartender</h3>
+              <div class="meta">High-volume environment · prioritisation · teamwork</div>
+            </div>
+            <div class="date">2024</div>
+          </div>
+          <ul>
+            <li>Worked in a fast-paced rooftop lounge environment and handled competing priorities during peak service.</li>
+            <li>Coordinated with team members to keep service smooth and maintain high standards.</li>
+            <li><span class="muted">[Optional]</span> Add a realistic metric you can defend (e.g. “busy Friday nights”, not exact numbers).</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <div>
+              <h3>Blackfire Restaurant — Bartender / Waiter</h3>
+              <div class="meta">Customer service · multitasking · reliability</div>
+            </div>
+            <div class="date">2023–2024</div>
+          </div>
+          <ul>
+            <li>Performed varied front-of-house roles in a demanding environment, balancing speed with accuracy.</li>
+            <li>Strengthened communication and problem-solving through real-time customer interaction.</li>
+            <li>Demonstrated consistent reliability and adaptability across shifts and service demands.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card">
+      <div class="sectionHead">
+        <h2>Education</h2>
+        <div class="hint">Clear, simple, and recruiter-friendly</div>
+      </div>
+
+      <div class="grid2">
+        <div class="tile">
+          <h3>University of Canberra</h3>
+          <p>
+            <strong>Bachelor of Software Engineering</strong> <span class="muted">(in progress)</span><br>
+            <strong>Diploma of Information Technology</strong> <span class="muted">(completed, 2024)</span>
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Certifications</h3>
+          <p class="muted" style="margin-bottom:10px;">
+            You can keep these on the CV; include here only if relevant to roles you apply for.
+          </p>
+          <div class="tagRow">
+            <span class="tag">HLTAID011 First Aid</span>
+            <span class="tag">RSA</span>
+            <span class="tag">SITHFAB002</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section card" id="contact">
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <div class="hint">Fastest way for recruiters to reach you</div>
+      </div>
+
+      <div class="grid2">
+        <div class="tile">
+          <h3>Email</h3>
+          <p class="muted">
+            <span class="muted">Harrison.sloane2013@gmail.com</span><br>
+            Example: <code class="inline">Harrison.sloane2013@gmail.com</code>
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Links</h3>
+          <p class="muted">
+            GitHub: <a href="https://github.com/mehp123092" target="_blank" rel="noopener">github.com/mehp123092</a><br>
+            <span class="muted">[Optional]</span> LinkedIn: <code class="inline">linkedin.com/in/YOUR-LINK</code>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer card">
+      <div>
+        © <span id="year"></span> Brynn Sloane · Built with GitHub Pages
+      </div>
+      <div class="muted">
+        Last updated: <span class="muted">edit <code class="inline">index.html</code> to update</span>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
